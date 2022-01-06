@@ -68,7 +68,7 @@ class Locating(nn.Module):
     def __init__(self, zdim=256):
         super(Locating, self).__init__()
 
-        self.v, self.t = read_4obj('./model/tour_small.4obj')
+        self.v, self.t = read_4obj('./model/tour_small.txt')
         self.t = torch.from_numpy(self.t).long()
         self.v = torch.from_numpy(self.v) / 6
         self.encoder = PointNet(zdim).float()  
